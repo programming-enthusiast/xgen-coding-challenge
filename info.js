@@ -1,8 +1,19 @@
-window.htmlTemplate = `
+window.htmlTemplate1 = `
 <div class="product">
     <a href="{{product_url}}">
         <img src="{{image}}" alt="{{prod_name}}">
         <div class="title">{{prod_name}}</div>
+        <div class="title">{{short_description}}</div>
+        <div class="price">{{currency_symbol}}{{price}}</div>    
+    </a>
+</div>
+`
+
+window.htmlTemplate2 = `
+<div class="product">
+    <a href="{{product_url}}">
+        <img src="{{image}}" alt="{{prod_name}}">
+        <div class="title">{{prod_name}} - {{manufacturer}}</div>
         <div class="price">{{currency_symbol}}{{price}}</div>    
     </a>
 </div>
@@ -10,9 +21,9 @@ window.htmlTemplate = `
 
 window.products = [
   {
-    "short_description": "Top 2",
+    "short_description": "Green Women's Top",
     "product_url": "https://piedpiperstore.myshopify.com/products/top_2",
-    "product_types": ["green”", "“top", "top"],
+    "product_types": ["green", "top"],
     "prod_code": "4596234223693",
     "manufacturer": "XGen",
     "is_in_stock": "1",
@@ -27,9 +38,9 @@ window.products = [
     "prod_name": "Top 2"
   },
   {
-    "short_description": "Pants 20",
+    "short_description": "Navy Women's Pants",
     "product_url": "https://piedpiperstore.myshopify.com/products/pants_20",
-    "product_types": ["“pants”", "pants"],
+    "product_types": ["pants"],
     "prod_code": "4596236255309",
     "manufacturer": "XGen",
     "is_in_stock": "1",
@@ -44,9 +55,9 @@ window.products = [
     "prod_name": "Pants 20"
   },
   {
-    "short_description": "Top 13",
+    "short_description": "Camo Women's Tshirt",
     "product_url": "https://piedpiperstore.myshopify.com/products/top_13",
-    "product_types": ["camo”", "“top", "top"],
+    "product_types": ["camo", "top"],
     "prod_code": "4596234682445",
     "manufacturer": "XGen",
     "is_in_stock": "1",
@@ -61,9 +72,9 @@ window.products = [
     "prod_name": "Top 13"
   },
   {
-    "short_description": "Top 10",
+    "short_description": "Striped Women's Tank",
     "product_url": "https://piedpiperstore.myshopify.com/products/top_10",
-    "product_types": ["stripe”", "“top", "top"],
+    "product_types": ["stripe", "top"],
     "prod_code": "4596234584141",
     "manufacturer": "XGen",
     "is_in_stock": "1",
@@ -78,9 +89,9 @@ window.products = [
     "prod_name": "Top 10"
   },
   {
-    "short_description": "Coat 10",
+    "short_description": "Suede Women's Coat",
     "product_url": "https://piedpiperstore.myshopify.com/products/coat_10",
-    "product_types": ["suede”", "“coat", "coats"],
+    "product_types": ["suede", "coat", "coats"],
     "prod_code": "4596237107277",
     "manufacturer": "XGen",
     "is_in_stock": "1",
@@ -95,9 +106,9 @@ window.products = [
     "prod_name": "Coat 10"
   },
   {
-    "short_description": "Dress 13",
+    "short_description": "Floral Summer Dress",
     "product_url": "https://piedpiperstore.myshopify.com/products/dress_13",
-    "product_types": ["floral”", "red", "white", "“dress", "dress"],
+    "product_types": ["floral", "red", "white", "dress"],
     "prod_code": "4596233404493",
     "manufacturer": "XGen",
     "is_in_stock": "1",
@@ -112,26 +123,9 @@ window.products = [
     "prod_name": "Dress 13"
   },
   {
-    "short_description": "Dress 13",
-    "product_url": "https://piedpiperstore.myshopify.com/products/dress_13",
-    "product_types": ["floral”", "red", "white", "“dress", "dress"],
-    "prod_code": "4596233404493",
-    "manufacturer": "XGen",
-    "is_in_stock": "1",
-    "price": "54.00",
-    "currency": "USD",
-    "categories": [161788002381],
-    "category_ids": [161788002381],
-    "image": "https://cdn.shopify.com/s/files/1/0257/3693/7549/products/17106679.jpg?v=1587584670",
-    "currency_symbol": "$",
-    "type_id": "simple",
-    "sale_price": "None",
-    "prod_name": "Dress 13"
-  },
-  {
-    "short_description": "Top 6",
+    "short_description": "Navy Women's Top",
     "product_url": "https://piedpiperstore.myshopify.com/products/top_6",
-    "product_types": ["navy”", "“top", "top"],
+    "product_types": ["navy", "top"],
     "prod_code": "4596234420301",
     "manufacturer": "XGen",
     "is_in_stock": "1",
@@ -146,9 +140,9 @@ window.products = [
     "prod_name": "Top 6"
   },
   {
-    "short_description": "Top 16",
+    "short_description": "Green Women's Top",
     "product_url": "https://piedpiperstore.myshopify.com/products/top_16",
-    "product_types": ["green”", "“top", "top"],
+    "product_types": ["green", "top"],
     "prod_code": "4596234813517",
     "manufacturer": "XGen",
     "is_in_stock": "0",
@@ -163,9 +157,9 @@ window.products = [
     "prod_name": "Top 16"
   },
   {
-    "short_description": "Pants 6",
+    "short_description": "Blue Women's Pants",
     "product_url": "https://piedpiperstore.myshopify.com/products/pants_6",
-    "product_types": ["blue”", "“pants", "pants"],
+    "product_types": ["blue", "pants"],
     "prod_code": "4596235501645",
     "manufacturer": "XGen",
     "is_in_stock": "1",
@@ -180,9 +174,9 @@ window.products = [
     "prod_name": "Pants 6"
   },
   {
-    "short_description": "Top 14",
+    "short_description": "Navy Women's Top",
     "product_url": "https://piedpiperstore.myshopify.com/products/top_14",
-    "product_types": ["navy”", "“top", "top"],
+    "product_types": ["navy", "top"],
     "prod_code": "4596234747981",
     "manufacturer": "XGen",
     "is_in_stock": "1",
@@ -197,9 +191,9 @@ window.products = [
     "prod_name": "Top 14"
   },
   {
-    "short_description": "Top 3",
+    "short_description": "Floral Women's Top",
     "product_url": "https://piedpiperstore.myshopify.com/products/top_3",
-    "product_types": ["navy”", "“top", "top"],
+    "product_types": ["navy", "top"],
     "prod_code": "4596234289229",
     "manufacturer": "XGen",
     "is_in_stock": "0",
@@ -214,9 +208,9 @@ window.products = [
     "prod_name": "Top 3"
   },
   {
-    "short_description": "Coat 15",
+    "short_description": "Blue Fuzzy Women's Coat",
     "product_url": "https://piedpiperstore.myshopify.com/products/coat_15",
-    "product_types": ["blue”", "“coat", "coats"],
+    "product_types": ["blue", "coat"],
     "prod_code": "4596237500493",
     "manufacturer": "XGen",
     "is_in_stock": "1",
@@ -231,9 +225,9 @@ window.products = [
     "prod_name": "Coat 15"
   },
   {
-    "short_description": "Top 18",
+    "short_description": "Black Women's Tee",
     "product_url": "https://piedpiperstore.myshopify.com/products/top_18",
-    "product_types": ["black”", "“top", "top"],
+    "product_types": ["black", "top"],
     "prod_code": "4596235010125",
     "manufacturer": "XGen",
     "is_in_stock": "0",
