@@ -1,20 +1,19 @@
 # xgen-coding-challenge
 ## Requirements
-* Write a script using the index.js file that will:
-    * Take the provided HTML template and use it to display 4 products in the `#XgenElement` div
-    * Replace any `{{...}}` fields with the information from the products
-        * EX: `{{prod_name}}` should be replaced with `Top 2`
-    * Only display Tops, every other type of product should be excluded
-    * Exclude any product that is `"is_in_stock": "0"`
-* This should be done programmatically and nothing should be hard coded
-    * If you were to add a new HTML template with new `{{...}}` fields it should still work
-    * If you mix up the order of the products or add new ones, the correct products should still be displayed
-    * Using indices like `products[3]` to filter out products does not count
-* Products are stored in the global variable `products`
-* The HTML template is stored in the global variable `htmlTemplate`
-* Use style.css to make the products presentable, but it doesn't have to look fancy
+* Write a script in the `index.js` file that will use the information in `info.js` to display products.
+* `info.js` contains two HTML templates that should be used for the products as well as a list of products.
+* The double brackets `{{...}}` should be replaced with the corresponding product attribute.
+   * Ex: `{{prod_name}}` should be replaced with `Top 2`.
+* There should be two separate elements displayed. One using `htmlTemplate1` and the other using `htmlTemplate2` (both found in `info.js`).
+   * Both elements should contain 4 products.
+   * Exclude any products with the `"is_in_stock": "0"` value.
+   * The products should be randomized with every page load.
+   * The first element should display products with the "top" product type only.
+   * The second element should display products that do not have the "top" product type.
+* Style the elements to make them look presentable - add any flare you want.
+* This should be done entirely with *vanilla* JavaScript
 
-## Bonus Points
-* Create your own HTML template with the provided products
-* Show product sale prices if a product is on sale
-* Style the page to look pretty
+## Check
+* This should be done programmatically. 
+* If the HTML was different, HTML had a different layout, products were in a different order, or new product attributes were added, the script should still function the same.
+* Doing `template.replace('{{prod_name}}', 'Top 2')` does not count as adding a new product attribute would not work.
